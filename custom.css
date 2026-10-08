@@ -839,7 +839,7 @@ header::after {
 .centres {
   font-family: "Roboto-Regular";
   padding: 60px 0;
-  background: linear-gradient(90deg, #185287, #13a7b9);
+  background: linear-gradient(90deg, #155A9B 0%, #1096AF 100%);
   width: 95%;
   margin: 20px auto 40px;
   border-radius: 25px;
