@@ -533,7 +533,7 @@ header::after {
 }
 .ip-menu-list li .ip-num {
   font-size: 32px;
-  color: #11adc6;
+  color: rgba(17, 173, 198, 0.45);
   margin-right: 10px;
   font-family: "Roboto-Regular";
 }
