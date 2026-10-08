@@ -148,29 +148,52 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container-fluid">
-            <div class="row hero-row">
-                <!-- Left Text -->
-                <div class="col-lg-5 hero-text">
-                    <h1>
-                        India's leading hospital<br />for advanced<br />Neuro & Spine
-                        care.
-                    </h1>
-                    <p>Call: +91 91480 80000 / +91 8073012345</p>
-                    <a href="#" class="hero-btn">BOOK AN APPOINTMENT</a>
-                    <div class="hero-carousel-controls">
-                        <button class="carousel-prev">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="carousel-next">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+        <div class="container-fluid position-relative">
+            <div class="hero-slides-wrapper">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <div class="row hero-row">
+                        <!-- Left Text -->
+                        <div class="col-lg-5 hero-text">
+                            <h1>
+                                India's leading hospital<br />for advanced<br />Neuro & Spine
+                                care.
+                            </h1>
+                            <p>Call: +91 91480 80000 / +91 8073012345</p>
+                            <a href="#" class="hero-btn">BOOK AN APPOINTMENT</a>
+                        </div>
+                        <!-- Right Image -->
+                        <div class="col-lg-7 hero-image">
+                            <img src="images/banner-1.webp" alt="Brain and Spine Care" class="hero-img-circle" />
+                        </div>
                     </div>
                 </div>
-                <!-- Right Image -->
-                <div class="col-lg-7 hero-image">
-                    <img src="images/banner-1.webp" alt="Brain and Spine Care" class="hero-img-circle" />
+                <!-- Slide 2 -->
+                <div class="hero-slide" style="display: none;">
+                    <div class="row hero-row">
+                        <!-- Left Text -->
+                        <div class="col-lg-5 hero-text">
+                            <h1>
+                                India's leading hospital<br />for advanced<br />Neuro & Spine
+                                care.
+                            </h1>
+                            <p>Call: +91 91480 80000 / +91 8073012345</p>
+                            <a href="#" class="hero-btn">BOOK AN APPOINTMENT</a>
+                        </div>
+                        <!-- Right Image -->
+                        <div class="col-lg-7 hero-image">
+                            <img src="images/banner-1.webp" alt="Brain and Spine Care 2" class="hero-img-circle" />
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="hero-carousel-controls" style="position: absolute; bottom: 0; left: 15px; z-index: 10;">
+                <button class="carousel-prev" id="heroPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-next" id="heroNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -709,6 +732,9 @@
                 <div class="ps-video-box">
                     <div class="ps-carousel-container">
                         <div class="ps-carousel-track" id="psCarouselTrack">
+                            <div class="ps-carousel-item">
+                                <img src="images/patients-speak-image.webp" alt="Patient Story 10" />
+                            </div>
                             <div class="ps-carousel-item">
                                 <img src="images/patient-story-10.webp" alt="Patient Story 10" />
                             </div>

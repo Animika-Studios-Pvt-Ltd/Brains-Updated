@@ -1,7 +1,9 @@
 // Custom JavaScript for interactive elements
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Search toggle
+  // ==========================================
+  // 1. Search Toggle
+  // ==========================================
   const searchIcon = document.getElementById("searchIcon");
   const searchContainer = document.getElementById("searchContainer");
   const searchInput = document.getElementById("searchInput");
@@ -15,7 +17,69 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Sidebar toggle
+  // ==========================================
+  // 2. Hero Carousel Logic
+  // ==========================================
+  const heroSlides = document.querySelectorAll(".hero-slide");
+  const heroPrev = document.getElementById("heroPrev");
+  const heroNext = document.getElementById("heroNext");
+  if (heroSlides.length > 0 && heroPrev && heroNext) {
+    let currentHero = 0;
+    
+    const showHeroSlide = (index) => {
+      heroSlides.forEach((slide, i) => {
+        slide.style.display = i === index ? "block" : "none";
+        if(i === index) {
+            slide.classList.add("active");
+        } else {
+            slide.classList.remove("active");
+        }
+      });
+      
+      // Disable or enable previous button
+      if (index === 0) {
+        heroPrev.disabled = true;
+        heroPrev.style.opacity = "0.4";
+        heroPrev.style.cursor = "default";
+      } else {
+        heroPrev.disabled = false;
+        heroPrev.style.opacity = "1";
+        heroPrev.style.cursor = "pointer";
+      }
+      
+      // Disable or enable next button
+      if (index === heroSlides.length - 1) {
+        heroNext.disabled = true;
+        heroNext.style.opacity = "0.4";
+        heroNext.style.cursor = "default";
+      } else {
+        heroNext.disabled = false;
+        heroNext.style.opacity = "1";
+        heroNext.style.cursor = "pointer";
+      }
+    };
+
+    // Initialize button states on load
+    showHeroSlide(currentHero);
+
+    heroPrev.addEventListener("click", () => {
+      if (currentHero > 0) {
+        currentHero--;
+        showHeroSlide(currentHero);
+      }
+    });
+
+    heroNext.addEventListener("click", () => {
+      if (currentHero < heroSlides.length - 1) {
+        currentHero++;
+        showHeroSlide(currentHero);
+      }
+    });
+  }
+
+  // ==========================================
+  // 3. Sidebar Toggle
+  // ==========================================
   const hamburger = document.querySelector(".header-hamburger");
   const sidebar = document.getElementById("sidebarMenu");
   const sidebarClose = document.getElementById("sidebarClose");
@@ -38,7 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // International Patients Tab Switching
+  // ==========================================
+  // 4. International Patients Tab Switching
+  // ==========================================
   const ipMenuLinks = document.querySelectorAll(".ip-menu-list li");
   const ipCards = document.querySelectorAll(".ip-card-item");
 
@@ -52,24 +118,61 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById(targetId).classList.add("active");
     });
   });
-  // Team Carousel Logic
+  // ==========================================
+  // 5. Team Carousel Logic
+  // ==========================================
   const teamTrack = document.getElementById("teamTrack");
   const teamPrev = document.getElementById("teamPrev");
   const teamNext = document.getElementById("teamNext");
 
   if (teamTrack && teamPrev && teamNext) {
+    const updateTeamNav = () => {
+      // Prev button
+      if (teamTrack.scrollLeft <= 0) {
+        teamPrev.disabled = true;
+        teamPrev.style.opacity = "0.4";
+        teamPrev.style.cursor = "default";
+      } else {
+        teamPrev.disabled = false;
+        teamPrev.style.opacity = "1";
+        teamPrev.style.cursor = "pointer";
+      }
+
+      // Next button
+      if (teamTrack.scrollLeft + teamTrack.clientWidth >= teamTrack.scrollWidth - 5) {
+        teamNext.disabled = true;
+        teamNext.style.opacity = "0.4";
+        teamNext.style.cursor = "default";
+      } else {
+        teamNext.disabled = false;
+        teamNext.style.opacity = "1";
+        teamNext.style.cursor = "pointer";
+      }
+    };
+
+    // Initialize button states
+    setTimeout(updateTeamNav, 100);
+    window.addEventListener("resize", updateTeamNav);
+    teamTrack.addEventListener("scroll", updateTeamNav);
+
     teamPrev.addEventListener("click", () => {
-      const itemWidth = teamTrack.firstElementChild.offsetWidth + 20; // item width + gap
-      teamTrack.scrollBy({ left: -itemWidth, behavior: "smooth" });
+      if(!teamPrev.disabled) {
+        const itemWidth = teamTrack.firstElementChild.offsetWidth + 20; // item width + gap
+        teamTrack.scrollBy({ left: -itemWidth, behavior: "smooth" });
+      }
     });
 
     teamNext.addEventListener("click", () => {
-      const itemWidth = teamTrack.firstElementChild.offsetWidth + 20;
-      teamTrack.scrollBy({ left: itemWidth, behavior: "smooth" });
+      if(!teamNext.disabled) {
+        const itemWidth = teamTrack.firstElementChild.offsetWidth + 20;
+        teamTrack.scrollBy({ left: itemWidth, behavior: "smooth" });
+      }
     });
   }
 
-  // Super Specialities Carousel Logic
+  // ==========================================
+  // 6. Super Specialities Carousel Logic
+  // ==========================================
   const spTrack = document.getElementById("spTrack");
   const spPrev = document.getElementById("spPrev");
   const spNext = document.getElementById("spNext");
@@ -77,36 +180,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (spTrack && spPrev && spNext && spCurrentIndex) {
     let currentItem = 1;
-    const totalItems = 12;
+    const totalItems = spTrack.children.length;
 
     const updateCounter = () => {
       spCurrentIndex.textContent = currentItem;
     };
+    
+    const updateSpNav = () => {
+      // Prev button
+      if (spTrack.scrollLeft <= 0) {
+        spPrev.disabled = true;
+        spPrev.style.opacity = "0.4";
+        spPrev.style.cursor = "default";
+      } else {
+        spPrev.disabled = false;
+        spPrev.style.opacity = "1";
+        spPrev.style.cursor = "pointer";
+      }
+
+      // Next button
+      if (spTrack.scrollLeft + spTrack.clientWidth >= spTrack.scrollWidth - 5) {
+        spNext.disabled = true;
+        spNext.style.opacity = "0.4";
+        spNext.style.cursor = "default";
+      } else {
+        spNext.disabled = false;
+        spNext.style.opacity = "1";
+        spNext.style.cursor = "pointer";
+      }
+    };
+
+    // Initialize states
+    setTimeout(updateSpNav, 100);
+    window.addEventListener("resize", updateSpNav);
 
     spPrev.addEventListener("click", () => {
-      if (currentItem > 1) {
-        currentItem--;
-      } else {
-        currentItem = 1;
+      if (!spPrev.disabled) {
+        if (currentItem > 1) {
+          currentItem--;
+        } else {
+          currentItem = 1;
+        }
+        updateCounter();
+        const itemWidth = spTrack.firstElementChild.offsetWidth + 50; // item width + gap
+        spTrack.scrollBy({ left: -itemWidth, behavior: "smooth" });
       }
-      updateCounter();
-      const itemWidth = spTrack.firstElementChild.offsetWidth + 50; // item width + gap
-      spTrack.scrollBy({ left: -itemWidth, behavior: "smooth" });
     });
 
     spNext.addEventListener("click", () => {
-      if (currentItem < totalItems) {
-        currentItem++;
-      } else {
-        currentItem = totalItems;
+      if (!spNext.disabled) {
+        if (currentItem < totalItems) {
+          currentItem++;
+        } else {
+          currentItem = totalItems;
+        }
+        updateCounter();
+        const itemWidth = spTrack.firstElementChild.offsetWidth + 50;
+        spTrack.scrollBy({ left: itemWidth, behavior: "smooth" });
       }
-      updateCounter();
-      const itemWidth = spTrack.firstElementChild.offsetWidth + 50;
-      spTrack.scrollBy({ left: itemWidth, behavior: "smooth" });
     });
 
     // Optional: Update counter on manual scroll
     spTrack.addEventListener("scroll", () => {
+      updateSpNav();
       const itemWidth = spTrack.firstElementChild.offsetWidth + 50;
       const scrollLeft = spTrack.scrollLeft;
       const newIndex = Math.round(scrollLeft / itemWidth) + 1;
@@ -126,7 +262,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Patient's Speak Carousel
+  // ==========================================
+  // 7. Patient's Speak Carousel
+  // ==========================================
   const psTrack = document.getElementById("psCarouselTrack");
   const psPrev = document.getElementById("psNavPrev");
   const psNext = document.getElementById("psNavNext");
@@ -135,14 +273,46 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentSlide = 0;
     const totalSlides = psTrack.children.length;
 
+    const updatePsNav = () => {
+      // Prev button
+      if (currentSlide === 0) {
+        psPrev.disabled = true;
+        psPrev.style.opacity = "0.4";
+        psPrev.style.cursor = "default";
+      } else {
+        psPrev.disabled = false;
+        psPrev.style.opacity = "1";
+        psPrev.style.cursor = "pointer";
+      }
+
+      // Next button
+      if (currentSlide === totalSlides - 1) {
+        psNext.disabled = true;
+        psNext.style.opacity = "0.4";
+        psNext.style.cursor = "default";
+      } else {
+        psNext.disabled = false;
+        psNext.style.opacity = "1";
+        psNext.style.cursor = "pointer";
+      }
+    };
+
+    updatePsNav();
+
     psPrev.addEventListener("click", () => {
-      currentSlide = currentSlide > 0 ? currentSlide - 1 : totalSlides - 1;
-      psTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      if (currentSlide > 0) {
+        currentSlide--;
+        psTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updatePsNav();
+      }
     });
 
     psNext.addEventListener("click", () => {
-      currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
-      psTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        psTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updatePsNav();
+      }
     });
   }
 });
