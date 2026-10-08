@@ -507,32 +507,79 @@
 
     <!-- Super Specialities -->
     <section class="super-specialities">
-        <div class="container">
-            <h2 class="section-title">Super Specialities</h2>
-            <div class="specialities-grid">
-                <div class="speciality-card active">
-                    <div class="icon-wrapper"><img src="https://cdn-icons-png.flaticon.com/128/3004/3004381.png"
-                            alt="Neuro"></div>
-                    <h4>Neurology</h4>
-                    <a href="#">Read More ></a>
+        <div class="container position-relative">
+            <h2>Super Specialities</h2>
+            <div class="sp-carousel-container">
+                <div class="specialities-grid" id="spTrack">
+                    <!-- Cards -->
+                    <div class="speciality-card active">
+                        <div class="icon-wrapper"><img src="images/neurosurgery.webp" alt="Neurosurgery"></div>
+                        <h4>Neurosurgery</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/vascular-surgery.webp" alt="Vascular Surgery"></div>
+                        <h4>Vascular Surgery</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/plastic-&-reconstructive-surgery.webp"
+                                alt="Plastic & Reconstructive Surgery"></div>
+                        <h4>Plastic & Reconstructive Surgery</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/general-surgery.webp" alt="General Surgery"></div>
+                        <h4>General Surgery</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/surgical-oncology.webp" alt="Surgical Oncology">
+                        </div>
+                        <h4>Surgical Oncology</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/gastroenterology.webp" alt="Gastroenterology"></div>
+                        <h4>Gastroenterology</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/orthopaedics.webp" alt="Orthopaedics"></div>
+                        <h4>Orthopaedics</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/medical-oncology.webp" alt="Medical Oncology"></div>
+                        <h4>Medical Oncology</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/cardiology.webp" alt="Cardiology"></div>
+                        <h4>Cardiology</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/general-medicine.webp" alt="General Medicine"></div>
+                        <h4>General Medicine</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/pulmonology.webp" alt="Pulmonology"></div>
+                        <h4>Pulmonology</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="speciality-card">
+                        <div class="icon-wrapper"><img src="images/surgical-gastroenterology.webp"
+                                alt="Surgical Gastroenterology"></div>
+                        <h4>Surgical Gastroenterology</h4>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
                 </div>
-                <div class="speciality-card">
-                    <div class="icon-wrapper"><img src="https://cdn-icons-png.flaticon.com/128/3004/3004381.png"
-                            alt="Spine"></div>
-                    <h4>Spine Surgery</h4>
-                    <a href="#">Read More ></a>
-                </div>
-                <div class="speciality-card">
-                    <div class="icon-wrapper"><img src="https://cdn-icons-png.flaticon.com/128/3004/3004381.png"
-                            alt="Rehab"></div>
-                    <h4>Neuro Rehabilitation Centre</h4>
-                    <a href="#">Read More ></a>
-                </div>
-                <div class="speciality-card">
-                    <div class="icon-wrapper"><img src="https://cdn-icons-png.flaticon.com/128/3004/3004381.png"
-                            alt="Imaging"></div>
-                    <h4>Neuro Imaging</h4>
-                    <a href="#">Read More ></a>
+                <div class="sp-controls">
+                    <button class="sp-prev" id="spPrev"><i class="fas fa-chevron-left"></i></button>
+                    <span class="sp-counter"><span id="spCurrentIndex">1</span> of 12</span>
+                    <button class="sp-next" id="spNext"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -540,128 +587,233 @@
 
     <!-- Patient's Speak -->
     <section class="patients-speak">
-        <div class="container ps-content">
-            <div class="ps-text">
-                <h2>Patient's Speak</h2>
-                <p>We are a patient-centric hospital and our ultimate goal is to see our patients lead a healthy, happy
-                    and independent life.</p>
-                <a href="#">Read More ></a>
-            </div>
-            <div class="ps-video">
-                <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Patient Video">
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-                <p class="caption">Mr. Anand's Journey with us</p>
+        <div class="ps-bg-banner" style="background-image: url('images/patients-speak-bg.webp');">
+            <div class="container ps-inner-content">
+                <div class="ps-circle-box">
+                    <img src="images/patients-speak.webp" alt="Background Circle" class="ps-circle-img">
+                    <div class="ps-circle-text">
+                        <h2>Patient's Speak</h2>
+                        <p>70 year old Muthukumar, a resident of Bangalore, a heart patient, noticed sudden weakness on
+                            the right side of his body. He guessed it to be a symptom of a stroke...</p>
+                        <a href="#">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="ps-video-box">
+                    <div class="ps-carousel-container">
+                        <div class="ps-carousel-track" id="psCarouselTrack">
+                            <div class="ps-carousel-item"><img src="images/patient-story-10.webp"
+                                    alt="Patient Story 10"></div>
+                            <div class="ps-carousel-item"><img src="images/patient-story-11.webp"
+                                    alt="Patient Story 11"></div>
+                            <div class="ps-carousel-item"><img src="images/patient-story-12.webp"
+                                    alt="Patient Story 12"></div>
+                            <div class="ps-carousel-item"><img src="images/patient-story-13.webp"
+                                    alt="Patient Story 13"></div>
+                            <div class="ps-carousel-item"><img src="images/patient-story-16.webp"
+                                    alt="Patient Story 16"></div>
+                        </div>
+                    </div>
+                    <p class="ps-caption">Stroke is reversible. Time is key.</p>
+                    <div class="ps-controls-bottom">
+                        <button class="ps-nav-prev" id="psNavPrev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="ps-nav-next" id="psNavNext"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Know Your Brain & Brain Voice -->
-    <section class="knowledge-hub">
-        <div class="container kh-grid">
+    <section class="knowledge-and-voice-section">
+        <div class="container kv-grid">
+
+            <!-- Know Your Brain (Left) -->
             <div class="know-your-brain">
-                <h2 class="section-title kh-title">Know Your Brain</h2>
-                <div class="article">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                        alt="Brain Care">
-                    <h4>How to care for your brain</h4>
-                    <p>Keep your brain active, eat healthy, sleep well...</p>
-                    <a href="#">Read More ></a>
+                <h2>Know Your Brain</h2>
+
+                <div class="kyb-article">
+                    <img src="images/world-parkinson's-day.webp" alt="World Parkinson's Day">
+                    <h4>World Parkinson's Day</h4>
+                    <p>Parkinson's Disease: Causes, symptoms, diagnosis, treatment...</p>
+                    <div class="kyb-readmore"><a href="#">Read More <i class="fas fa-chevron-right"></i></a></div>
                 </div>
-                <div class="article">
-                    <img src="https://images.unsplash.com/photo-1581594622864-16e50fba4444?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                        alt="Brain Health">
-                    <h4>Brain Health for Children</h4>
-                    <p>Early childhood development and nutrition...</p>
-                    <a href="#">Read More ></a>
+
+                <div class="kyb-article">
+                    <img src="images/brain-tumours-in-children.webp" alt="Brain Tumours in Children">
+                    <h4>Brain Tumours in Children</h4>
+                    <p>Brain cancer does not spare any age group...</p>
+                    <div class="kyb-readmore"><a href="#">Read More <i class="fas fa-chevron-right"></i></a></div>
                 </div>
             </div>
+
+            <!-- Brain Voice (Right) -->
             <div class="brain-voice">
-                <h2 class="section-title kh-title-white">Brain Voice</h2>
-                <div class="newsletter">
-                    <h4>Monthly Newsletter</h4>
-                    <p>Subscribe to our newsletter</p>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address">
-                        <button>Subscribe</button>
+                <h2>Brain Voice</h2>
+
+                <div class="bv-newsletter">
+                    <div class="bv-newsletter-images">
+                        <img src="images/brain-voice.webp" alt="Newsletters" onerror="this.style.display='none'">
+                    </div>
+                    <div class="bv-newsletter-content">
+                        <h4>Monthly Newsletter</h4>
+                        <span class="bv-date">Feb 2025</span>
+                        <div class="bv-links">
+                            <a href="#" class="bv-link-download">Download</a>
+                            <a href="#" class="bv-link-previous">View Previous Publications</a>
+                        </div>
+                        <form class="bv-form">
+                            <input type="email" placeholder="Email ID">
+                            <button type="submit">SUBSCRIBE</button>
+                        </form>
                     </div>
                 </div>
-                <div class="video-msg">
-                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                        alt="Dr Video">
-                    <div class="play-btn small"><i class="fas fa-play"></i></div>
-                    <div class="msg-text">
-                        <p>"Health is not just absence of disease, it's a state of well being."</p>
+
+                <div class="bv-video">
+                    <div class="bv-video-thumbnail">
+                        <img src="images/vd.webp" alt="Brain Trauma Video">
+                        <div class="bv-play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="bv-video-text">
+                        <h4>What is brain trauma? How it affects one & the society at large?</h4>
+                        <p>Leading neurosurgeon and Founder of Brains Super Speciality Hospital, Dr. NK Venkataramana
+                            explains about it in Sustainability Karma, a podcast series on AIR FM Rainbow.</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Associations -->
     <section class="associations">
         <div class="container">
-            <h2 class="section-title">Associations</h2>
-            <div class="logo-scroll">
-                <img src="https://via.placeholder.com/100x50/ffffff/999999?text=Logo1" alt="Assoc 1">
-                <img src="https://via.placeholder.com/100x50/ffffff/999999?text=Logo2" alt="Assoc 2">
-                <img src="https://via.placeholder.com/100x50/ffffff/999999?text=Logo3" alt="Assoc 3">
-                <img src="https://via.placeholder.com/100x50/ffffff/999999?text=Logo4" alt="Assoc 4">
-                <img src="https://via.placeholder.com/100x50/ffffff/999999?text=Logo5" alt="Assoc 5">
-                <img src="https://via.placeholder.com/100x50/ffffff/999999?text=Logo6" alt="Assoc 6">
+            <h2>Associations</h2>
+            <div class="logo-scroll-container">
+                <div class="logo-scroll-track">
+                    <div class="logo-set">
+                        <img src="images/neurological-society-of-india.webp" class="img-fluid" alt="Alliance 1">
+                        <img src="images/american-society-of-neurological-surgeons.webp" class="img-fluid"
+                            alt="Alliance 2">
+                        <img src="images/congress-of-neurological-surgeons-usa.webp" class="img-fluid" alt="Alliance 3">
+                        <img src="images/dandy-neurological-society-usa.webp" class="img-fluid" alt="Alliance 4">
+                        <img src="images/indspn-indian-society-of-paediatric-neurosurgery.webp" class="img-fluid"
+                            alt="Alliance 5">
+                        <img src="images/indian-society-of-stererotatic-and-functional-neurosurgery.webp"
+                            class="img-fluid" alt="Alliance 6">
+                        <img src="images/cerebrovascular-society-of-india.webp" class="img-fluid" alt="Alliance 7">
+                        <img src="images/ness-neuroendoscopy-society-of-india.webp" class="img-fluid" alt="Alliance 8">
+                        <img src="images/neur-trauma-society-of-india.webp" class="img-fluid" alt="Alliance 9">
+                    </div>
+                    <div class="logo-set">
+                        <img src="images/neurological-society-of-india.webp" class="img-fluid" alt="Alliance 1">
+                        <img src="images/american-society-of-neurological-surgeons.webp" class="img-fluid"
+                            alt="Alliance 2">
+                        <img src="images/congress-of-neurological-surgeons-usa.webp" class="img-fluid" alt="Alliance 3">
+                        <img src="images/dandy-neurological-society-usa.webp" class="img-fluid" alt="Alliance 4">
+                        <img src="images/indspn-indian-society-of-paediatric-neurosurgery.webp" class="img-fluid"
+                            alt="Alliance 5">
+                        <img src="images/indian-society-of-stererotatic-and-functional-neurosurgery.webp"
+                            class="img-fluid" alt="Alliance 6">
+                        <img src="images/cerebrovascular-society-of-india.webp" class="img-fluid" alt="Alliance 7">
+                        <img src="images/ness-neuroendoscopy-society-of-india.webp" class="img-fluid" alt="Alliance 8">
+                        <img src="images/neur-trauma-society-of-india.webp" class="img-fluid" alt="Alliance 9">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-top">
-            <div class="footer-col brand-info">
-                <img src="https://via.placeholder.com/150x50/ffffff/0056b3?text=BrainS+Logo" alt="BrainS Logo"
-                    class="footer-logo">
-                <p><strong>BrainS Super Speciality Hospital</strong></p>
-                <div class="certifications">
-                    <img src="https://via.placeholder.com/80x40/ffffff/999999?text=NABH" alt="NABH">
-                    <img src="https://via.placeholder.com/80x40/ffffff/999999?text=ISO" alt="ISO">
+        <div class="footer-top-white">
+            <div class="container">
+                <div class="footer-hospital-info row align-items-center">
+                    <div class="footer-logo-wrap col-md-3 text-center">
+                        <img src="images/brains-logo-footer.webp" alt="BrainS Logo" class="footer-logo img-fluid">
+                    </div>
+                    <div class="footer-address-image col-md-5 text-center">
+                        <img src="/images/hospita-location.webp" alt="Hospital Building" class="hospital-img img-fluid">
+                    </div>
+                    <div class="address-text col-md-4">
+                        <h5>Our Location</h5>
+                        <p>Brains Super Speciality Hospital<br>
+                            192, T Mariyappa Road, Lalbagh, Siddapura,<br>
+                            Jayanagar 1st Block, Bengaluru - 560011,<br>
+                            Karnataka India.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="footer-col address">
-                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-                    alt="Hospital Building" class="hospital-img">
-                <p>#4, 8th Main, 11th Cross, <br>Vasanth Nagar, Bengaluru - 560052, <br>Karnataka, India.</p>
-            </div>
-            <div class="footer-col quick-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Specialities</a></li>
-                    <li><a href="#">Doctors</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-col links">
-                <h4>Specialities</h4>
-                <ul>
-                    <li><a href="#">Neurosurgery</a></li>
-                    <li><a href="#">Neurology</a></li>
-                    <li><a href="#">Spine Care</a></li>
-                    <li><a href="#">Child Care</a></li>
-                </ul>
-            </div>
-            <div class="footer-col qr-code">
-                <img src="https://via.placeholder.com/100x100?text=QR+Code" alt="QR Code">
-                <p>Scan for location</p>
+
+                <div class="footer-emergency-banner row align-items-center">
+                    <div class="banner-book-btn col-md-3">
+                        <a href="#" class="btn-book-appointment">BOOK AN APPOINTMENT</a>
+                    </div>
+                    <div class="banner-opd-info col-md-3">
+                        <img src="images/opd-hours.webp" alt="OPD Hours" class="opd-icon">
+                        <div class="opd-text">
+                            <p>Monday to Saturday<br>
+                                9:00 AM to 5:00 PM,<br>
+                                5:00 PM to 8:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="banner-emergency-info col-md-6">
+                        <div class="emergency-title">Emergency Services available</div>
+                        <div class="emergency-details">
+                            <img src="images/24x365.webp" alt="24/365 Days" class="emergency-icon">
+                            <div class="emergency-contact">
+                                <p>Including Holidays<br>
+                                    +91 91480 80000 / +91 8073012345</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
+
+        <div class="footer-middle-gray">
             <div class="container">
-                <p>&copy; 2026 BrainS Super Speciality Hospital. All Rights Reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <div class="footer-links-grid">
+                    <ul>
+                        <li><a href="#">Patient Stories</a></li>
+                        <li><a href="#">Diseases</a></li>
+                        <li><a href="#">Key Procedures</a></li>
+                        <li><a href="#">International Patients</a></li>
+                        <li class="social-icons">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Specialities</a></li>
+                        <li><a href="#">Clinic</a></li>
+                        <li><a href="#">Inpatient</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Media</a></li>
+                        <li><a href="#">CSR</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <div class="barcode">
+                        <a href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15553.507436196616!2d77.5922195!3d12.9477201!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x75e781fad36ecf06!2sBrains%20Hospital!5e0!3m2!1sen!2sin!4v1657947681523!5m2!1sen!2sin"
+                            target="blank"><img src="images/brains-location-scanner.webp" class="img-fluid"
+                                alt="brains hospital map"></a>
+                        <p>Scan for Location</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-dark">
+            <div class="container">
+                <p>&copy; 2019-2026. Brains Super Speciality Hospital. All rights reserved.</p>
+                <p>Powered By: LUMOS.in</p>
             </div>
         </div>
     </footer>
