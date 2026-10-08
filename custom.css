@@ -22,6 +22,14 @@
     url("fonts/RobotoCondensed-Bold.ttf") format("truetype");
 }
 @font-face {
+  font-family: "Roboto-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local("Roboto-Medium"),
+    url("fonts/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
   font-family: "Roboto-Regular";
   font-style: normal;
   font-weight: 400;
@@ -46,15 +54,16 @@ body {
 
 h2 {
   font-family: "Mirador-Medium";
-  font-size: 45px;
+  font-size: 50px;
   color: #144e97;
   letter-spacing: 0.02em;
 }
 
-p {
+p, li, a {
   font-family: "Roboto-Light";
   font-size: 18px;
 }
+
 
 /* --- Header Section --- */
 header {
@@ -155,7 +164,7 @@ header::after {
   position: relative;
 }
 .header-nav-list li a {
-  font-family: "Roboto-Regular";
+  font-family: "Roboto-Medium";
   font-size: 16px;
   color: #144e97;
   text-decoration: none;
