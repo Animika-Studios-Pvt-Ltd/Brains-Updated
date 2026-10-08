@@ -837,7 +837,6 @@ header::after {
 
 /* --- Centres of Excellence Section --- */
 .centres {
-  font-family: "Roboto-Regular";
   padding: 60px 0;
   background: linear-gradient(90deg, #155A9B 0%, #1096AF 100%);
   width: 95%;
@@ -856,7 +855,7 @@ header::after {
   gap: 20px 30px;
 }
 .centres .centre-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
   border: none;
   border-radius: 10px;
   padding: 0 20px 0 0;
@@ -868,8 +867,19 @@ header::after {
   cursor: pointer;
   margin: 0;
 }
+
+/* Alternate items in Left Column (Rows 1, 3, 5...) */
+.centres .centre-card:nth-child(4n - 3) {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Alternate items in Right Column (Rows 1, 3, 5...) */
+.centres .centre-card:nth-child(4n - 2) {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
 .centres .centre-card:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
 }
 .centres .centre-card img {
   width: auto;
