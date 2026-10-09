@@ -216,7 +216,7 @@ header::after {
   column-count: 2;
   column-gap: 20px;
   min-width: 550px;
-  padding: 12px 10px;
+  padding: 6px 10px;
 }
 .header-dropdown-2col li {
   break-inside: avoid-column;
@@ -459,20 +459,46 @@ header::after {
   .mobile-nav-item { display: none !important; }
 }
 @media (max-width: 991px) {
+  .header-sidebar-menu { overflow-y: auto; max-width: 85vw; width: max-content; min-width: 240px; padding-right: 30px; }
   .header-nav-list { display: none !important; }
   .header-sidebar-nav-list .header-has-dropdown { position: relative; }
   .header-sidebar-nav-list .header-dropdown-menu {
     position: static;
     box-shadow: none;
     border-top: none;
-    padding-left: 15px;
+    padding-left: 20px;
+    background-color: transparent;
+  }
+.header-sidebar-nav-list li {
+  margin-bottom: 10px;
+}
+.header-sidebar-nav-list li a {
+  font-size: 16px;
+}
+.header-sidebar-nav-list li a i {
+  font-size: 13px;
+  margin-left: 5px;
+}
+  .header-sidebar-nav-list .header-dropdown-menu li {
+    margin-bottom: 6px;
+  }
+  .header-sidebar-nav-list .header-dropdown-menu li:last-child {
+    margin-bottom: 0px;
+  }
+  .header-sidebar-nav-list .header-dropdown-menu li a {
+    color: #144e97 !important;
+    padding: 0;
+    font-size: 15px;
   }
   .header-sidebar-nav-list .header-dropdown-2col {
     column-count: 1;
     min-width: 100%;
   }
+  .header-sidebar-nav-list .header-has-dropdown:hover .header-dropdown-menu {
+    display: none;
+  }
   .header-sidebar-nav-list .header-has-dropdown.active .header-dropdown-menu {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -481,7 +507,6 @@ header::after {
   .header-top-action { gap: 6px; }
   .header-helpline-text { font-size: 14px; margin-left: -25px; }
   .header-book-btn { font-size: 13px; padding: 6px 12px; }
-  .header-helpline-img {  }
   .header-nav { flex-wrap: wrap; justify-content: flex-end; margin-top: 15px; }
   .header-search-container { margin-left: 0; margin-right: 15px; }
   .header-search-container.active .header-search-input {
@@ -491,7 +516,6 @@ header::after {
 @media (max-width: 767px) {
   header { padding: 15px 0;}
   .header-logo-img { max-width: 180px; }
-  .header-helpline-img { }
   .header-top-action { flex-wrap: wrap; justify-content: end; gap: 10px; margin-bottom: 0px; }
   .header-nav { margin-top: 10px; }
   .header-search-container { margin: 10px 10px 10px 0; }
@@ -514,6 +538,14 @@ header::after {
   .header-hamburger { width: 24px; height: 16px; }
   .header-search-container.active .header-search-input {
   width: 150px; }
+  .header-sidebar-menu { padding: 10px 15px; }
+  .header-sidebar-close { font-size: 35px; margin-bottom: 30px; }
+  .header-sidebar-nav-list li { margin-bottom: 6px; }
+  .header-sidebar-nav-list li a { font-size: 15px; }
+  .header-sidebar-nav-list li a i { font-size: 12px; margin-left: 2px; }
+  .header-sidebar-nav-list .header-dropdown-menu li a { font-size: 14px; }
+  .header-dropdown-menu { padding: 4px 0;}
+  .header-sidebar-nav-list .header-dropdown-menu { padding-left: 10px; }
 }
 
 @media (max-width: 480px) {
@@ -525,6 +557,10 @@ header::after {
   .header-hamburger { width: 22px; height: 14px; }
   .header-search-container.active .header-search-input {
   width: 130px; }
+  .header-sidebar-close { font-size: 30px; margin-bottom: 15px; }
+  .header-sidebar-nav-list li { margin-bottom: 8px; }
+  .header-sidebar-nav-list li a { font-size: 14px; }
+  .header-sidebar-nav-list .header-dropdown-menu li a { font-size: 13px; }
 }
 
 @media (max-width: 420px) {
@@ -535,6 +571,9 @@ header::after {
   .header-hamburger { width: 20px; height: 14px; }
   .header-search-container.active .header-search-input {
   width: 120px; }
+  .header-sidebar-nav-list li { margin-bottom: 10px; }
+  .header-sidebar-nav-list li a { font-size: 13px; }
+  .header-sidebar-nav-list .header-dropdown-menu li a { font-size: 12px; }
 }
 
 @media (max-width: 380px) {
@@ -545,6 +584,10 @@ header::after {
   .header-hamburger { width: 18px; height: 12px; }
   .header-search-container.active .header-search-input {
   width: 110px; }
+  .header-sidebar-close { font-size: 30px; margin-bottom: 30px; }
+  .header-sidebar-nav-list li { margin-bottom: 6px; }
+  .header-sidebar-nav-list li a { font-size: 13px; }
+  .header-sidebar-nav-list .header-dropdown-menu li a { font-size: 12px; }
 }
 
 @media (max-width: 360px) {
@@ -558,6 +601,9 @@ header::after {
   .header-hamburger { width: 16px; height: 12px; }
   .header-search-container.active .header-search-input {
   width: 100px; font-size: 12px; }
+  .header-sidebar-nav-list li { margin-bottom: 6px; }
+  .header-sidebar-nav-list li a { font-size: 12px; }
+  .header-sidebar-nav-list .header-dropdown-menu li a { font-size: 11px; }
 }
 
 /* Hero section structural replacements */

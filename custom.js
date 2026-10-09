@@ -85,29 +85,61 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebarClose = document.getElementById("sidebarClose");
   const sidebarOverlay = document.getElementById("sidebarOverlay");
 
+  const sidebarDropdowns = document.querySelectorAll(".header-sidebar-nav-list .header-has-dropdown > a");
+
   if (hamburger && sidebar && sidebarClose && sidebarOverlay) {
+    const closeSidebar = () => {
+      sidebar.classList.remove("active");
+      sidebarOverlay.classList.remove("active");
+      
+      // Close all open dropdowns inside the sidebar
+      sidebarDropdowns.forEach(link => {
+        const parentLi = link.parentElement;
+        if (parentLi.classList.contains("active")) {
+          parentLi.classList.remove("active");
+          const icon = link.querySelector("i");
+          if (icon) {
+            icon.style.transform = "rotate(0deg)";
+          }
+        }
+      });
+    };
+
     hamburger.addEventListener("click", () => {
       sidebar.classList.add("active");
       sidebarOverlay.classList.add("active");
     });
 
-    sidebarClose.addEventListener("click", () => {
-      sidebar.classList.remove("active");
-      sidebarOverlay.classList.remove("active");
-    });
+    sidebarClose.addEventListener("click", closeSidebar);
+    sidebarOverlay.addEventListener("click", closeSidebar);
 
-    sidebarOverlay.addEventListener("click", () => {
-      sidebar.classList.remove("active");
-      sidebarOverlay.classList.remove("active");
+    window.addEventListener("scroll", () => {
+      if (sidebar.classList.contains("active")) {
+        closeSidebar();
+      }
     });
   }
 
   // Sidebar Dropdown Toggle
-  const sidebarDropdowns = document.querySelectorAll(".header-sidebar-nav-list .header-has-dropdown > a");
   sidebarDropdowns.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const parentLi = link.parentElement;
+      
+      // Close all other open dropdowns
+      sidebarDropdowns.forEach(otherLink => {
+        if (otherLink !== link) {
+          const otherParent = otherLink.parentElement;
+          if (otherParent.classList.contains("active")) {
+            otherParent.classList.remove("active");
+            const otherIcon = otherLink.querySelector("i");
+            if (otherIcon) {
+              otherIcon.style.transform = "rotate(0deg)";
+            }
+          }
+        }
+      });
+
       parentLi.classList.toggle("active");
       
       const icon = link.querySelector("i");
