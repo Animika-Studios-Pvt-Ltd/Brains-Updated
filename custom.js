@@ -164,6 +164,13 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("active");
       const targetId = link.getAttribute("data-target");
       document.getElementById(targetId).classList.add("active");
+
+      const allLinks = Array.from(ipMenuLinks);
+      const index = allLinks.indexOf(link);
+      const wrapper = document.querySelector(".ip-card-wrapper");
+      if (wrapper) {
+        wrapper.setAttribute("data-active-col", index % 2 === 0 ? "left" : "right");
+      }
     });
   });
   // ==========================================

@@ -1248,6 +1248,133 @@ header::after {
   border-radius: 50%;
 }
 
+/* --- International Patients Responsive --- */
+@media (max-width: 1440px) {
+  .international-patients { padding: 40px 0; }
+  .ip-menu-list li { font-size: 22px; }
+  .ip-menu-list li.active { font-size: 24px; }
+  .ip-card-inner { padding: 35px; min-height: 320px; }
+  .ip-card-title { font-size: 23px; }
+}
+
+@media (max-width: 1366px) {
+  .ip-menu-list li { font-size: 21px; }
+  .ip-menu-list li.active { font-size: 23px; }
+  .ip-card-inner { min-height: 310px; }
+}
+
+@media (max-width: 1200px) {
+  .international-patients { padding: 30px 0; }
+  .ip-menu-list li { font-size: 20px; }
+  .ip-menu-list li.active { font-size: 22px; }
+  .ip-card-inner { padding: 20px 30px 20px 55px; min-height: 250px; }
+  .ip-card-num { font-size: 28px; }
+  .ip-card-title { font-size: 20px; }
+  .ip-card-list { gap: 10px 10px;}
+  .ip-card-list li { font-size: 15px; }
+  .ip-card-img { width: 120px; height: 120px; }
+}
+
+@media (max-width: 991px) {
+  .international-patients { padding: 30px 0; }
+  .international-patients h2 { margin-bottom: 30px; }
+  
+  .international-patients .row { flex-direction: column; margin-left: 0; margin-right: 0; }
+  .international-patients .col-md-12 { display: contents; }
+  
+  .ip-menu-list { order: 1; width: 100%; display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; }
+  .ip-menu-list li { width: calc(50% - 8px); font-size: 18px; text-align: left; }
+  .ip-menu-list li .ip-num { font-size: 28px; margin-right: 8px; }
+  .ip-menu-list li.active { font-size: 19px; white-space: nowrap; }
+  
+  .ip-card-wrapper { order: 2; width: 100%; margin-left: 0; }
+  .ip-card-inner { padding: 20px 30px; min-height: 220px; }
+  .ip-read-more { order: 3; width: 100%; display: block; text-align: center; margin-top: 30px; margin-bottom: 0; }
+  
+  .ip-card-arrow {
+    left: 25%;
+    top: 0;
+    transform: translateX(-50%);
+    border-top: 30px solid #e4eef0;
+    border-bottom: none;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    transition: left 0.3s ease;
+  }
+  .ip-card-wrapper[data-active-col="left"] .ip-card-arrow { left: 30%; }
+  .ip-card-wrapper[data-active-col="right"] .ip-card-arrow { left: 70%; }
+}
+
+@media (max-width: 767px) {
+  .international-patients { padding: 20px 0; }
+  .international-patients h2 { margin-bottom: 20px; }
+  .ip-menu-list li { font-size: 15px; }
+  .ip-menu-list li .ip-num { font-size: 22px; margin-right: 5px; }
+  .ip-menu-list li.active { font-size: 15px; white-space: normal; line-height: 1.3; }
+  
+  .ip-card-item.active { flex-direction: row; text-align: left; gap: 15px; }
+  .ip-card-img { width: 110px; height: 110px; margin: 0; }
+  .ip-card-header { margin-bottom: 10px; display: block; }
+  .ip-card-list { grid-template-columns: 1fr; gap: 5px; }
+  
+  .ip-card-arrow {
+    border-top: 20px solid #e4eef0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+  }
+  .ip-card-inner { padding: 30px 20px 15px 20px; min-height: auto; }
+  .ip-read-more { margin-top: 20px;}
+}
+@media (max-width: 575px) {
+  .international-patients { padding: 20px 0; }
+  .international-patients h2 { margin-bottom: 15px; }
+  .ip-menu-list { display: none !important; }
+  .ip-card-arrow { display: none !important; }
+  .ip-card-inner { flex-direction: column; padding: 20px 20px 15px 20px; min-height: auto;  }
+  .ip-card-item {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    gap: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+  }
+  .ip-card-item:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  .ip-card-header { display: flex; flex-direction: row; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+  .ip-card-title { font-size: 18px; }
+  .ip-card-num { font-size: 20px; color: #83eefe; }
+  .ip-card-list li { font-size: 14px; }
+  .ip-card-img { width: 100px; height: 100px; margin: 0 auto; }
+  .ip-read-more { margin-top: 10px;}
+}
+
+@media (max-width: 480px) {
+  .international-patients h2 { margin-bottom: 10px; }
+  .international-patients { padding: 15px 0; }
+  .ip-card-title { font-size: 16px; }
+  .ip-card-num { font-size: 18px; }
+  .ip-card-list li { font-size: 13px; }
+  .ip-card-img { width: 85px; height: 85px; }
+  .ip-card-inner { border-radius: 15px; }
+  .ip-card-item { margin-bottom: 12px; }
+}
+
+@media (max-width: 360px) {
+  .international-patients { padding: 10px 0; }
+  .ip-card-title { font-size: 14px; }
+  .ip-card-num { font-size: 16px; }
+  .ip-card-list li { font-size: 12px; }
+  .ip-card-img { width: 70px; height: 70px; }
+  .ip-card-item { gap: 10px; margin-bottom: 8px; }
+}
+
 /* --- Achievements Section --- */
 .achievements {
   padding: 60px 0 40px 0;
