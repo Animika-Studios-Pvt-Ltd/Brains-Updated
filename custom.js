@@ -325,10 +325,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const psTrack = document.getElementById("psCarouselTrack");
   const psPrev = document.getElementById("psNavPrev");
   const psNext = document.getElementById("psNavNext");
+  const psTextElement = document.querySelector(".ps-circle-text p");
+  const psCaptionElement = document.querySelector(".ps-caption");
+
+  const patientStories = [
+    { text: "70 year old Muthukumar, a resident of Bangalore, a heart patient, noticed sudden weakness on the right side of his body. He guessed it to be a symptom of a stroke...", caption: "Stroke is reversible. Time is key." },
+    { text: "Another inspiring story of a patient recovering from a complex spine surgery. With proper care and timely intervention, mobility was restored in record time.", caption: "Spine Care Excellence." },
+    { text: "A successful neurosurgery transformed the life of a young athlete, bringing them back to the field stronger than ever.", caption: "Neurosurgery Success." },
+    { text: "Advanced rehabilitation and dedicated neuro care helped our patient regain speech and cognitive abilities after a severe trauma.", caption: "Rehabilitation and Care." },
+    { text: "Pioneering brain tumor treatment provided new hope and a second chance at life for a mother of two.", caption: "Fighting Brain Tumors." },
+    { text: "State-of-the-art diagnostics and prompt treatment averted a life-threatening aneurysm rupture.", caption: "Advanced Diagnostics." }
+  ];
 
   if (psTrack && psPrev && psNext) {
     let currentSlide = 0;
     const totalSlides = psTrack.children.length;
+
+    if (psTextElement) psTextElement.style.transition = "opacity 0.3s ease";
+    if (psCaptionElement) psCaptionElement.style.transition = "opacity 0.3s ease";
+
+    const updatePsContent = () => {
+      if (psTextElement && psCaptionElement && patientStories[currentSlide]) {
+        psTextElement.style.opacity = "0";
+        psCaptionElement.style.opacity = "0";
+        setTimeout(() => {
+          psTextElement.textContent = patientStories[currentSlide].text;
+          psCaptionElement.textContent = patientStories[currentSlide].caption;
+          psTextElement.style.opacity = "1";
+          psCaptionElement.style.opacity = "1";
+        }, 300);
+      }
+    };
 
     const updatePsNav = () => {
       // Prev button
@@ -361,6 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentSlide--;
         psTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
         updatePsNav();
+        updatePsContent();
       }
     });
 
@@ -369,7 +397,37 @@ document.addEventListener("DOMContentLoaded", () => {
         currentSlide++;
         psTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
         updatePsNav();
+        updatePsContent();
       }
     });
+
+    // Move Heading outside circle on Mobile
+    const psHeading = document.querySelector(".ps-circle-text h2");
+    const psInnerContent = document.querySelector(".ps-inner-content");
+    const psCircleBox = document.querySelector(".ps-circle-box");
+    const psCircleText = document.querySelector(".ps-circle-text");
+    const psParagraph = document.querySelector(".ps-circle-text p");
+
+    if (psHeading && psInnerContent && psCircleBox && psCircleText) {
+      const handlePsHeading = () => {
+        if (window.innerWidth < 767) {
+          if (psHeading.parentNode !== psInnerContent) {
+            psInnerContent.insertBefore(psHeading, psCircleBox);
+            psHeading.style.color = "#144e97";
+            psHeading.style.marginBottom = "0px";
+            psHeading.style.width = "100%";
+          }
+        } else {
+          if (psHeading.parentNode !== psCircleText) {
+            psCircleText.insertBefore(psHeading, psParagraph);
+            psHeading.style.color = "white";
+            psHeading.style.marginBottom = "25px";
+            psHeading.style.width = "auto";
+          }
+        }
+      };
+      window.addEventListener("resize", handlePsHeading);
+      handlePsHeading();
+    }
   }
 });

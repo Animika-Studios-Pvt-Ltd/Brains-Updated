@@ -2028,7 +2028,6 @@ header::after {
 .patients-speak .ps-circle-text p {
   line-height: 1.6;
   margin-bottom: 25px;
-  opacity: 0.95;
 }
 .patients-speak .ps-circle-text a {
   font-family: "Roboto-Regular";
@@ -2109,6 +2108,73 @@ header::after {
   border-color: #144e97;
   color: #ffffff;
 }
+
+/* --- Patients Speak Responsive --- */
+@media (max-width: 1440px) {
+  .patients-speak .ps-bg-banner { 
+    background-image: none !important; 
+    background-color: #164f97; 
+    height: 350px; 
+    display: flex; 
+    align-items: center; 
+  }
+  .patients-speak .ps-inner-content { width: 100%; }
+}
+
+@media (max-width: 1366px) {
+  .patients-speak .ps-bg-banner { background-color: #164f97; }
+}
+
+@media (max-width: 1200px) {
+  .patients-speak .ps-circle-box { width: 500px; height: 500px; margin-top: -50px; margin-bottom: -50px; }
+  .patients-speak .ps-circle-text { margin-top: -40px; width: 60%; }
+  .patients-speak .ps-circle-text p { font-size: 15px; }
+  .patients-speak .ps-video-box { margin-right: 50px; }
+}
+
+@media (max-width: 991px) {
+  .patients-speak { padding: 60px 0; }
+  .patients-speak .ps-bg-banner { height: 280px; }
+  .patients-speak .ps-inner-content { flex-direction: row; justify-content: center; gap: 20px; }
+  .patients-speak .ps-circle-box { margin: 0; width: 420px; height: 420px; }
+  .patients-speak .ps-video-box { margin: 0; max-width: 320px; flex: 1; }
+  .patients-speak .ps-circle-text { margin-top: -30px; }
+  .patients-speak .ps-carousel-item img { height: 200px; }
+  .patients-speak .ps-controls-bottom button { width: 32px; height: 36px; font-size: 16px; }
+}
+
+@media (max-width: 767px) {
+  .patients-speak { padding: 25px 0 60px 0; }
+  .patients-speak .ps-bg-banner { background: transparent !important; height: auto; }
+  .patients-speak .ps-inner-content { flex-direction: column; text-align: center; gap: 15px; }
+  .patients-speak .ps-circle-box { margin: 0 auto; width: 400px; height: 400px; }
+  .patients-speak .ps-video-box { margin: 0 auto; max-width: 400px; width: 85%; }
+  .patients-speak .ps-caption { color: #333333; margin-bottom: 10px; }
+  .patients-speak .ps-controls-bottom { bottom: -40px; }
+  .patients-speak .ps-circle-text { margin-top: -50px; width: 70%; }
+  .patients-speak .ps-circle-text h2 { margin-bottom: 15px; font-size: 22px; }
+  .patients-speak .ps-circle-text p { margin-bottom: 15px; font-size: 14px; }
+  .patients-speak .ps-carousel-item img { height: 220px; }
+  .patients-speak .ps-controls-bottom button { width: 30px; height: 34px; font-size: 14px; }
+}
+
+@media (max-width: 575px) {
+  .patients-speak { padding: 20px 0; }
+  .patients-speak .ps-circle-box { width: 350px; height: 350px; }
+  .patients-speak .ps-circle-text { margin-top: -10px; width: 75%; }
+  .patients-speak .ps-circle-text h2 { font-size: 18px; margin-bottom: 10px; }
+  .patients-speak .ps-circle-text p { font-size: 13px; line-height: 1.4; margin-bottom: 10px; }
+  .patients-speak .ps-circle-text a { font-size: 14px; }
+  .patients-speak .ps-controls-bottom button { width: 26px; height: 30px; font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .patients-speak { padding: 15px 0; }
+  .patients-speak .ps-circle-box { width: 280px; height: 280px; }
+  .patients-speak .ps-circle-text h2 { font-size: 16px; }
+  .patients-speak .ps-carousel-item img { height: 180px; }
+}
+
 
 /* --- Know Your Brain & Brain Voice Section --- */
 .knowledge-and-voice-section {
