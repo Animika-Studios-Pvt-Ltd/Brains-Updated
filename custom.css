@@ -1807,7 +1807,7 @@ header::after {
   text-align: center;
   margin: 0 0 40px 0;
 }
-.sp-carousel-container {
+.super-specialities-carousel-container {
   position: relative;
 }
 .super-specialities .specialities-grid {
@@ -1891,7 +1891,7 @@ header::after {
   background: #ffffff;
   color: #144e97;
 }
-.sp-controls {
+.super-specialities-controls {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -1899,7 +1899,7 @@ header::after {
   margin-top: 20px;
   padding-right: 20px;
 }
-.sp-controls button {
+.super-specialities-controls button {
   background: #ffffff;
   color: #63b9ca;
   border: 2px solid #63b9ca;
@@ -1912,23 +1912,24 @@ header::after {
   font-size: 18px;
   padding: 0;
 }
-.sp-controls button.sp-prev {
+.super-specialities-controls button.super-specialities-prev {
   border-radius: 25px 0 0 25px;
 }
-.sp-controls button.sp-next {
+.super-specialities-controls button.super-specialities-next {
   border-radius: 0 25px 25px 0;
 }
-.sp-controls button:not(:disabled):hover {
+.super-specialities-controls button:not(:disabled):hover {
   background-color: #144e97;
   border-color: #144e97;
   color: #ffffff;
 }
-.sp-controls span {
+.super-specialities-controls span {
   font-family: "Roboto-Regular";
   font-size: 16px;
   color: #333333;
 }
 
+/* --- Patients Speak Section --- */
 .patients-speak {
   font-family: "Roboto-Regular";
   position: relative;
