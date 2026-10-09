@@ -307,13 +307,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Update active card on hover
+    // Update active card on hover or click
     const spCards = spTrack.querySelectorAll(".speciality-card");
     spCards.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
+      const activateCard = () => {
         spCards.forEach((c) => c.classList.remove("active"));
         card.classList.add("active");
-      });
+      };
+      card.addEventListener("mouseenter", activateCard);
+      card.addEventListener("click", activateCard);
     });
   }
 

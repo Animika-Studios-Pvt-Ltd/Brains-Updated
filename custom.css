@@ -1903,13 +1903,13 @@ header::after {
   background: #ffffff;
   color: #63b9ca;
   border: 2px solid #63b9ca;
-  width: 30px;
-  height: 35px;
+  width: 40px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   padding: 0;
 }
 .super-specialities-controls button.super-specialities-prev {
@@ -1927,6 +1927,50 @@ header::after {
   font-family: "Roboto-Regular";
   font-size: 16px;
   color: #333333;
+}
+
+/* --- Super Specialities Responsive --- */
+@media (max-width: 1200px) {
+  .super-specialities { padding: 20px 0 30px 0; }
+  .super-specialities .specialities-grid { gap: 30px; }
+  .super-specialities .speciality-card { flex: 0 0 calc(33.333% - 20px); }
+}
+
+@media (max-width: 991px) {
+  .super-specialities { padding: 15px 0 20px 0; }
+  .super-specialities .specialities-grid { gap: 20px; }
+  .super-specialities .speciality-card { flex: 0 0 calc(33.333% - 13.33px); height: 320px; }
+  .super-specialities .speciality-card .icon-wrapper { width: 140px; height: 140px; }
+  .super-specialities-controls button { width: 35px; height: 40px; font-size: 18px; }
+  .super-specialities-controls span { font-size: 15px; }
+}
+
+@media (max-width: 767px) {
+  .super-specialities .speciality-card { flex: 0 0 calc(50% - 10px); height: 300px; padding: 15px 10px 0 10px; }
+  .super-specialities .speciality-card h4 { font-size: 18px; }
+  .super-specialities .speciality-card .icon-wrapper { width: 120px; height: 120px; }
+  .super-specialities-controls { justify-content: center; padding-right: 0; }
+  .super-specialities-controls button { width: 30px; height: 35px; font-size: 15px; }
+}
+
+@media (max-width: 575px) {
+  .super-specialities .specialities-grid { gap: 15px; padding-bottom: 20px; }
+  .super-specialities .speciality-card { flex: 0 0 calc(50% - 7.5px); }
+}
+
+@media (max-width: 480px) {
+  .super-specialities h2 { margin-bottom: 30px; }
+  .super-specialities .specialities-grid { width: 75%; margin: 0 auto; padding: 0 0 20px 0; gap: 20px; }
+  .super-specialities .speciality-card { 
+    flex: 0 0 100%; 
+    height: 280px; 
+    scroll-snap-align: center;
+    background: linear-gradient(180deg, #3ac8c9 0%, #125596 100%);
+    color: white;
+  }
+  .super-specialities .speciality-card h4 { font-size: 16px; color: #ffffff; }
+  .super-specialities .speciality-card a { background: #ffffff; color: #144e97; }
+  .super-specialities-controls button { width: 26px; height: 30px; font-size: 14px; }
 }
 
 /* --- Patients Speak Section --- */
