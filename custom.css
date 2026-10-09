@@ -2432,7 +2432,7 @@ header::after {
 
 /* --- Associations Section --- */
 .associations {
-  padding: 60px 0;
+  padding: 30px 0 60px 0;
   background-color: #ffffff;
   overflow: hidden;
 }
@@ -2480,6 +2480,39 @@ header::after {
   100% {
     transform: translateX(-50%);
   }
+}
+
+@media (max-width: 1440px) {
+  .associations { padding: 25px 0 50px 0; }
+  .associations h2 { margin: 0 0 40px 0; }
+}
+
+@media (max-width: 1200px) {
+  .associations { padding: 20px 0 40px 0; }
+  .associations h2 { margin: 0 0 35px 0; }
+  .associations .logo-set { gap: 40px; padding-right: 60px; }
+  .associations .logo-set img { max-height: 80px; width: auto; }
+}
+
+@media (max-width: 991px) {
+  .associations { padding: 15px 0 30px 0; }
+  .associations h2 { margin: 0 0 30px 0; }
+  .associations .logo-set { gap: 30px; padding-right: 40px; }
+  .associations .logo-set img { max-height: 70px; }
+}
+
+@media (max-width: 767px) {
+  .associations { padding: 15px 0 25px 0; }
+  .associations h2 { margin: 0 0 25px 0; }
+  .associations .logo-set { gap: 20px; padding-right: 30px; }
+  .associations .logo-set img { max-height: 60px; }
+}
+
+@media (max-width: 575px) {
+  .associations { padding: 10px 0 20px 0; }
+  .associations h2 { margin: 0 0 10px 0; }
+  .associations .logo-set { gap: 15px; padding-right: 20px; }
+  .associations .logo-set img { max-height: 50px; }
 }
 
 /* --- Footer Section --- */
