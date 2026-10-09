@@ -1643,6 +1643,46 @@ header::after {
   margin: 0;
 }
 
+/* --- Team Responsive --- */
+@media (max-width: 1200px) {
+  .team .team-member { flex: 0 0 calc(33.333% - 13.33px); }
+  .team::before { width: 300px; height: 400px; top: -250px; }
+}
+
+@media (max-width: 991px) {
+  .team { padding: 30px 0 20px 0; }
+  .team h2 { margin-bottom: 40px; }
+  .team .team-grid { padding-bottom: 0; }
+  .team-carousel-container { padding: 0 50px; }
+  .team .team-member { flex: 0 0 calc(50% - 10px); }
+  .team::before { display: none; }
+  .team .team-bg-band { top: 165px; }
+}
+
+@media (max-width: 767px) {
+  .team { padding: 20px 0 15px 0; }
+  .team h2 { margin-bottom: 30px; }
+  .team-carousel-container { padding: 0 40px; }
+  .team-carousel-prev, .team-carousel-next { width: 35px; height: 35px; font-size: 1rem; top: 85px; }
+  .team .team-member img { width: 150px; height: 190px; }
+  .team .team-bg-band { top: 140px; height: 100px; }
+}
+
+@media (max-width: 575px) {
+  .team h2 { margin-bottom: 25px; }
+  .team-carousel-container { padding: 0 30px; }
+  .team .team-member { flex: 0 0 100%; min-width: auto; }
+  .team .team-bg-band { top: 135px; }
+  .team-carousel-prev { left: calc(50% - 150px); }
+  .team-carousel-next { right: calc(50% - 150px); }
+}
+
+@media (max-width: 480px) {
+  .team h2 { margin-bottom: 20px; }
+  .team-carousel-container { padding: 0 15px; }
+  .team .team-bg-band { top: 125px; height: 90px; }
+}
+
 /* --- Centres of Excellence Section --- */
 .centres {
   padding: 60px 0;
