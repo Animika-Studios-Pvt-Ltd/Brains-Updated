@@ -1688,7 +1688,7 @@ header::after {
   padding: 60px 0;
   background: linear-gradient(90deg, #155A9B 0%, #1096AF 100%);
   width: 95%;
-  margin: 20px auto 40px;
+  margin: 20px auto;
   border-radius: 25px;
   box-sizing: border-box;
 }
@@ -1743,6 +1743,56 @@ header::after {
 }
 .centres .centre-card i {
   font-size: 18px;
+}
+
+/* --- Centres Responsive --- */
+@media (max-width: 1440px) {
+  .centres {padding: 40px 0; }
+  .centres .centre-card span { font-size: 22px; }
+}
+
+@media (max-width: 1366px) {
+  .centres .centre-card span { font-size: 21px; }
+}
+
+@media (max-width: 1200px) {
+  .centres {padding: 30px 0; }
+  .centres .centre-card span { font-size: 20px; }
+}
+
+@media (max-width: 991px) {
+  .centres { padding: 40px 0; width: 100%; border-radius: 0; margin-top: 0; }
+  .centres .centres-grid { grid-template-columns: repeat(1, 1fr); gap: 15px; width: 90%; margin: 0 auto; }
+  .centres .centre-card span { font-size: 20px; }
+  
+  .centres .centre-card:nth-child(odd) {
+    background: linear-gradient(to right, rgba(18, 116, 163, 1) 0%, rgba(18, 116, 163, 0) 100%);
+  }
+  .centres .centre-card:nth-child(even) {
+    background: linear-gradient(to right, rgba(34, 136, 176, 1) 0%, rgba(34, 136, 176, 0) 100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .centres { padding: 30px 0; }
+  .centres h2 { margin-bottom: 30px; }
+  .centres .centre-card { gap: 15px; padding-right: 15px; }
+  .centres .centre-card span { font-size: 18px; }
+  .centres .centre-card img { max-width: 130px; }
+}
+
+@media (max-width: 575px) {
+  .centres { padding: 20px 0; }
+  .centres h2 { margin-bottom: 25px; }
+  .centres .centre-card span { font-size: 16px; }
+  .centres .centre-card img { max-width: 110px; }
+}
+
+@media (max-width: 480px) {
+  .centres h2 { margin-bottom: 20px; }
+  .centres .centre-card { gap: 10px; padding-right: 10px; }
+  .centres .centre-card span { font-size: 14px; }
+  .centres .centre-card img { max-width: 90px; }
 }
 
 /* --- Super Specialities Section --- */
