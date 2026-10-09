@@ -427,7 +427,7 @@ header::after {
     max-width: 80%; 
     content: url("images/brains-logo-footer.webp");
   }
-  .header-top-action { margin-bottom: 20px;}
+  .header-top-action { margin-bottom: 20px; justify-content: end;}
   .header-helpline-text { font-size: 14px; padding: 5px 10px 5px 12px; margin-left: -26px; }
   .header-book-btn { font-size: 13px; padding: 5px 10px; }
   .header-helpline-img { max-width: 65%; height: 34px;}
@@ -626,7 +626,7 @@ header::after {
 }
 .hero-text h1 {
   font-family: "Mirador-Medium";
-  font-size: 58px;
+  font-size: 56px;
   color: #144e97;
   margin-bottom: 10px;
   line-height: 1.2;
@@ -636,6 +636,9 @@ header::after {
   font-size: 28px;
   color: #144e97;
   margin-bottom: 25px;
+}
+.hero-image img {
+  width: 100%;
 }
 .hero-btn {
   text-transform: uppercase;
@@ -658,8 +661,8 @@ header::after {
   gap: 6px;
   margin-top: 50px;
 }
-.carousel-prev,
-.carousel-next {
+.hero-carousel-prev,
+.hero-carousel-next {
   background: #ffffff;
   border: 2px solid;
   width: 36px;
@@ -672,21 +675,163 @@ header::after {
   font-size: 18px;
   padding: 0;
 }
-.carousel-prev {
+.hero-carousel-prev {
   border-color: #13a1b9;
   color: #13a1b9;
   border-radius: 25px 0 0 25px;
 }
-.carousel-next {
+.hero-carousel-next {
   border-color: #13a1b9;
   color: #13a1b9;
   border-radius: 0 25px 25px 0;
 }
-.carousel-prev:not(:disabled):hover,
-.carousel-next:not(:disabled):hover {
+.hero-carousel-prev:not(:disabled):hover,
+.hero-carousel-next:not(:disabled):hover {
   background-color: #144e97;
   border-color: #144e97;
   color: #ffffff;
+}
+
+/* --- Hero Section Responsive Styles --- */
+@media (max-width: 1850px) {
+  .hero-text {
+    margin-top: 0px;
+  }
+  .hero-text h1 { font-size: 54px; }
+}
+
+@media (max-width: 1800px) {
+  .hero-text h1 { font-size: 53px; }
+  .hero-text p { font-size: 27px; }
+}
+
+@media (max-width: 1750px) {
+  .hero-text h1 { font-size: 52px; }
+  .hero-btn { font-size: 19px; }
+}
+
+@media (max-width: 1700px) {
+  .hero-text h1 { font-size: 50px; }
+  .hero-text p { font-size: 26px; }
+}
+
+@media (max-width: 1650px) {
+  .hero-text h1 { font-size: 48px; }
+}
+
+@media (max-width: 1600px) {
+  .hero-text h1 { font-size: 46px; }
+  .hero-text p { font-size: 25px; }
+}
+
+@media (max-width: 1550px) {
+  .hero-text h1 { font-size: 45px; }
+}
+
+@media (max-width: 1500px) {
+  .hero-text h1 { font-size: 43px; }
+}
+@media (max-width: 1440px) {
+  .hero-text h1 { font-size: 38px; }
+  .hero-text p { font-size: 24px; }
+  .hero-btn { font-size: 18px; padding: 10px 18px; }
+  .hero-image img { max-width: 100%; height: auto; }
+  .hero-carousel-prev, .hero-carousel-next { width: 34px; height: 38px; font-size: 16px; }
+}
+
+@media (max-width: 1366px) {
+  .hero-carousel-controls { margin-top: 30px; }
+  .hero-text h1 { font-size: 36px; }
+  .hero-text p { font-size: 22px; margin-bottom: 10px; }
+  .hero-btn { font-size: 16px; padding: 8px 16px; }
+}
+
+@media (max-width: 1200px) {
+  .hero-section { width: 95%; padding: 35px 0; }
+  .hero-text { margin-top: -20px;}
+  .hero-text h1 { font-size: 34px; }
+  .hero-text p { font-size: 20px; margin-bottom: 10px; }
+  .hero-btn { font-size: 15px; }
+}
+
+@media (max-width: 1150px) {
+  .hero-text h1 { font-size: 33px; }
+  .hero-text p { font-size: 19px; }
+}
+
+@media (max-width: 1100px) {
+  .hero-text h1 { font-size: 30px; }
+  .hero-text p { font-size: 18px; }
+}
+
+@media (max-width: 1024px) {
+  .hero-text h1 { font-size: 29px; }
+  .hero-text p { font-size: 18px; }
+  .hero-btn { font-size: 14px; padding: 6px 14px; }
+  .hero-carousel-controls { margin-top: 20px; }
+  .hero-carousel-prev, .hero-carousel-next { width: 32px; height: 36px; font-size: 15px; }
+}
+
+@media (max-width: 991px) {
+  .hero-section { width: 95%; padding: 30px 0; }
+  .hero-text h1 { font-size: 28px; }
+  .hero-text p { font-size: 18px; }
+}
+
+@media (max-width: 950px) {
+  .hero-text h1 { font-size: 27px; }
+  .hero-text p { font-size: 17.8px; }
+}
+
+@media (max-width: 900px) {
+  .hero-text h1 { font-size: 25px; }
+  .hero-text p { font-size: 17.5px; }
+}
+
+@media (max-width: 850px) {
+  .hero-text h1 { font-size: 24px; }
+  .hero-text p { font-size: 17px; }
+}
+
+@media (max-width: 800px) {
+  .hero-text h1 { font-size: 23px; }
+}
+
+@media (max-width: 767px) {
+  .hero-section { padding: 25px 0;}
+  .hero-row { flex-direction: column; text-align: center; }
+  .hero-text { align-items: center; margin-top: 0; margin-bottom: 25px; }
+  .hero-text h1 { font-size: 25px; }
+  .hero-text p { font-size: 18px; margin-bottom: 15px; }
+  .hero-btn { font-size: 13px; }
+  .hero-image img { max-width: 80%; }
+  .hero-carousel-controls { position: relative !important; left: auto !important; bottom: auto !important; justify-content: center; margin-top: 20px; }
+  .hero-carousel-prev, .hero-carousel-next { width: 30px; height: 34px; font-size: 14px; }
+}
+
+@media (max-width: 575px) {
+  .hero-section { width: 95%; padding: 20px 0 40px 0; }
+  .hero-text { margin-bottom: 20px;}
+  .hero-text h1 { font-size: 26px; }
+  .hero-text p { font-size: 18px; }
+  .hero-image img { max-width: 90%; }
+}
+
+@media (max-width: 480px) {
+  .hero-section { width: 95%; padding: 20px 0 40px 0; }
+  .hero-text h1 { font-size: 22px; }
+  .hero-text p { font-size: 16px; }
+  .hero-btn { font-size: 12px; }
+  .hero-carousel-prev, .hero-carousel-next { width: 28px; height: 32px; font-size: 13px; }
+}
+
+@media (max-width: 360px) {
+  .hero-section { width: 95%; padding: 20px 0 30px 0; }
+  .hero-text h1 { font-size: 20px; }
+  .hero-text p { font-size: 13px; }
+  .hero-btn { font-size: 11px; padding: 5px 10px; }
+  .hero-image img { max-width: 100%; }
+  .hero-carousel-prev, .hero-carousel-next { width: 26px; height: 30px; font-size: 12px; }
 }
 
 /* --- Founder Section Replacements --- */
