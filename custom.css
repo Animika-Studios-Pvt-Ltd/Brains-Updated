@@ -1487,7 +1487,7 @@ header::after {
   .achievements h2 { margin-bottom: 20px;}
   .achievements .achievement-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px 15px;
+    gap: 30px 15px;
   }
   .achievements .achieve-top,
   .achievements .achieve-mid,
@@ -1509,7 +1509,7 @@ header::after {
   .achievements .achievement-grid {
     grid-template-columns: repeat(2, 1fr);
     width: 90%;
-    gap: 30px 15px;
+    gap: 20px 15px;
   }
   .achievements .achieve-top,
   .achievements .achieve-mid,
