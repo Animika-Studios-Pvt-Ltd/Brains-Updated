@@ -102,6 +102,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Sidebar Dropdown Toggle
+  const sidebarDropdowns = document.querySelectorAll(".header-sidebar-nav-list .header-has-dropdown > a");
+  sidebarDropdowns.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const parentLi = link.parentElement;
+      parentLi.classList.toggle("active");
+      
+      const icon = link.querySelector("i");
+      if (icon) {
+        icon.style.transition = "transform 0.3s ease";
+        icon.style.transform = parentLi.classList.contains("active") ? "rotate(180deg)" : "rotate(0deg)";
+      }
+    });
+  });
+
   // ==========================================
   // 4. International Patients Tab Switching
   // ==========================================

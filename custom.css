@@ -256,7 +256,7 @@ header::after {
   cursor: pointer;
 }
 .header-hamburger {
-  margin-left: 35px;
+  margin-left: 20px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -282,7 +282,7 @@ header::after {
   box-shadow: -2px 0 15px rgba(0, 0, 0, 0.2);
   z-index: 2000;
   transition: right 0.4s ease;
-  padding: 30px;
+  padding: 10px 20px;
 }
 .header-sidebar-menu.active {
   right: 0;
@@ -331,6 +331,233 @@ header::after {
 .header-sidebar-overlay.active {
   visibility: visible;
   opacity: 1;
+}
+
+/* ==========================================
+   Responsive Header Media Queries
+   ========================================== */
+@media (max-width: 1800px) {
+  .header-logo-img { max-width: 95%; }
+  .header-helpline-text { font-size: 19px; }
+  .header-book-btn { font-size: 15px; padding: 8px 22px; }
+  .header-nav-list { gap: 25px; padding-left: 0px; }
+}
+
+@media (max-width: 1700px) {
+  .header-logo-img { max-width: 90%; }
+  .header-helpline-text { font-size: 18px; }
+  .header-book-btn { font-size: 15px; padding: 8px 20px; }
+  .header-helpline-img { max-width: 95%; }
+  .header-nav-list { gap: 20px; }
+}
+
+@media (max-width: 1600px) {
+  .header-logo-img { max-width: 90%; }
+  .header-helpline-text { font-size: 17.5px; }
+  .header-book-btn { font-size: 14.5px; padding: 8px 18px; }
+  .header-helpline-img { max-width: 90%; }
+  .header-nav-list { gap: 15px; }
+}
+
+@media (max-width: 1550px) {
+  .header-logo-img { max-width: 90%; }
+  .header-helpline-text { font-size: 17.2px; }
+  .header-book-btn { font-size: 14.2px; padding: 7px 17px; }
+  .header-helpline-img { max-width: 88%; }
+  .header-nav-list { gap: 12px; }
+  .header-search-container.active .header-search-input {
+  width: 160px; }
+}
+
+@media (max-width: 1500px) {
+  .header-logo-img { max-width: 90%; }
+  .header-helpline-text { font-size: 17px; }
+  .header-book-btn { font-size: 14px; padding: 7px 16px; }
+  .header-helpline-img { max-width: 85%; height: 40px; }
+  .header-nav-list { gap: 12px;}
+  .header-search-container.active .header-search-input {
+  width: 140px; }
+}
+@media (max-width: 1440px) {
+  .header-row { width: 95%;}
+  .header-logo-img { max-width: 90%; }
+   .header-top-action { margin-bottom: 25px;}
+  .header-helpline-text { font-size: 16px; }
+  .header-book-btn { font-size: 13.5px; padding: 7px 14px; }
+  .header-helpline-img { max-width: 80%; }
+  .header-nav-list { gap: 12px;}
+  .header-nav-list li a { font-size: 15px; }
+  .header-nav-list li a i { margin-left: 2px;}
+  .header-search-icon { font-size: 19px;}
+  .header-hamburger { margin-left: 10px;}
+  .header-search-container.active .header-search-input {
+  width: 130px; }
+}
+
+@media (max-width: 1366px) {
+  .header-logo-img { max-width: 85%; }
+   .header-top-action { margin-bottom: 20px;}
+  .header-helpline-text { font-size: 16px; margin-left: -28px; }
+  .header-book-btn { font-size: 13px; padding: 6px 14px; }
+  .header-helpline-img { max-width: 75%; }
+  .header-nav-list { gap: 12px; }
+  .header-nav-list li a { font-size: 14px; }
+  .header-search-container.active .header-search-input {
+  width: 120px; }
+  .header-search-icon { font-size: 18px;}
+}
+
+@media (max-width: 1280px) {
+  .header-logo-img { max-width: 82%; }
+  .header-helpline-text { font-size: 15.5px; margin-left: -28px; }
+  .header-book-btn { font-size: 14px; padding: 6px 13px; }
+  .header-helpline-img { max-width: 72%; }
+  .header-nav-list { gap: 12px; padding-left: 5px; }
+  .header-nav-list li a { font-size: 14px; }
+  .header-search-container.active .header-search-input {
+  width: 100px; }
+}
+
+@media (max-width: 1200px) {
+  header { padding: 18px 0; }
+  .header-row {
+    width: 97%;
+  }
+  .header-logo-img { 
+    max-width: 80%; 
+    content: url("images/brains-logo-footer.webp");
+  }
+  .header-top-action { margin-bottom: 20px;}
+  .header-helpline-text { font-size: 14px; padding: 5px 10px 5px 12px; margin-left: -26px; }
+  .header-book-btn { font-size: 13px; padding: 5px 10px; }
+  .header-helpline-img { max-width: 65%; height: 34px;}
+  .header-nav-list { gap: 10px; padding-left: 0px; margin-left: auto; }
+  .header-nav-list li a { font-size: 14px; }
+  .header-nav-list li a i { font-size: 11px; }
+  .header-search-container { margin-left: 20px; }
+  .header-search-container.active .header-search-input {
+  width: 100px; }
+}
+
+@media (max-width: 1024px) {
+  header { padding: 15px 0;}
+  .header-logo-img { max-width: 80%; }
+  .header-nav-list { gap: 9px; padding-left: 0; margin-left: auto; }
+  .header-nav-list li a { font-size: 13px; }
+  .header-nav-list li a i { font-size: 10px; }
+  .header-helpline-text { font-size: 14px; margin-left: -24px; }
+  .header-book-btn { font-size: 10px; padding: 4px 8px; }
+  .header-helpline-img { height: 33px; }
+  .header-search-container { margin-left: 15px; }
+  .header-hamburger { margin-left: 15px; }
+  .header-search-container.active .header-search-input {
+  width: 90px; }
+}
+
+/* Sidebar Nav Dropdown Overrides for Mobile */
+@media (min-width: 992px) {
+  .mobile-nav-item { display: none !important; }
+}
+@media (max-width: 991px) {
+  .header-nav-list { display: none !important; }
+  .header-sidebar-nav-list .header-has-dropdown { position: relative; }
+  .header-sidebar-nav-list .header-dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-top: none;
+    padding-left: 15px;
+  }
+  .header-sidebar-nav-list .header-dropdown-2col {
+    column-count: 1;
+    min-width: 100%;
+  }
+  .header-sidebar-nav-list .header-has-dropdown.active .header-dropdown-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-logo-img { max-width: 75%; }
+  .header-top-action { gap: 6px; }
+  .header-helpline-text { font-size: 14px; margin-left: -25px; }
+  .header-book-btn { font-size: 13px; padding: 6px 12px; }
+  .header-helpline-img {  }
+  .header-nav { flex-wrap: wrap; justify-content: flex-end; margin-top: 15px; }
+  .header-search-container { margin-left: 0; margin-right: 15px; }
+  .header-search-container.active .header-search-input {
+  width: 180px; }
+}
+
+@media (max-width: 767px) {
+  header { padding: 15px 0;}
+  .header-logo-img { max-width: 180px; }
+  .header-helpline-img { }
+  .header-top-action { flex-wrap: wrap; justify-content: end; gap: 10px; margin-bottom: 0px; }
+  .header-nav { margin-top: 10px; }
+  .header-search-container { margin: 10px 10px 10px 0; }
+  .header-hamburger { margin-left: 10px; }
+  .header-search-container.active .header-search-input {
+  width: 160px; }
+}
+
+@media (max-width: 700px) {
+  .header-book-btn { display: none; }
+}
+
+@media (max-width: 575px) {
+  header { padding: 10px 0; }
+  .header-row { width: 100%;}
+  .header-logo-img { max-width: 140px; }
+  .header-helpline-img { height: 30px; }
+  .header-helpline-text { font-size: 14px; padding: 3px 10px 3px 12px; margin-left: -24px; }
+  .header-search-icon { font-size: 16px; }
+  .header-hamburger { width: 24px; height: 16px; }
+  .header-search-container.active .header-search-input {
+  width: 150px; }
+}
+
+@media (max-width: 480px) {
+  .header-logo-img { max-width: 140px; }
+  .header-helpline-img { height: 28px; }
+  .header-helpline-text { font-size: 13px; margin-left: -24px; }
+  .header-search-icon { font-size: 15px; }
+  .header-hamburger .header-hamburger-bar { height: 2px;}
+  .header-hamburger { width: 22px; height: 14px; }
+  .header-search-container.active .header-search-input {
+  width: 130px; }
+}
+
+@media (max-width: 420px) {
+  .header-logo-img { max-width: 130px; }
+  .header-helpline-img { height: 26px; }
+  .header-helpline-text { font-size: 12px; margin-left: -25px; }
+  .header-search-icon { font-size: 14px; }
+  .header-hamburger { width: 20px; height: 14px; }
+  .header-search-container.active .header-search-input {
+  width: 120px; }
+}
+
+@media (max-width: 380px) {
+  .header-logo-img { max-width: 120px; }
+  .header-helpline-img { height: 24px; }
+  .header-helpline-text { font-size: 11px; margin-left: -25px; }
+  .header-search-icon { font-size: 13px; }
+  .header-hamburger { width: 18px; height: 12px; }
+  .header-search-container.active .header-search-input {
+  width: 110px; }
+}
+
+@media (max-width: 360px) {
+  header {
+    padding: 6px 0 0 0;
+  }
+  .header-logo-img { max-width: 110px; }
+  .header-helpline-img { height: 23px; }
+  .header-helpline-text { font-size: 10px; margin-left: -25px; }
+  .header-search-icon { font-size: 12px; }
+  .header-hamburger { width: 16px; height: 12px; }
+  .header-search-container.active .header-search-input {
+  width: 100px; font-size: 12px; }
 }
 
 /* Hero section structural replacements */
@@ -1597,4 +1824,3 @@ header::after {
   font-size: 16px;
   color: #696b6a;
 }
-
