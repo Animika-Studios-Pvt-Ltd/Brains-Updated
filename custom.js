@@ -313,6 +313,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const activateCard = () => {
         spCards.forEach((c) => c.classList.remove("active"));
         card.classList.add("active");
+        // Update carousel counter based on active card
+        const index = Array.from(spCards).indexOf(card) + 1;
+        currentItem = index;
+        updateCounter();
       };
       card.addEventListener("mouseenter", activateCard);
       card.addEventListener("click", activateCard);
