@@ -18,67 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. Hero Carousel Logic
-  // ==========================================
-  const heroSlides = document.querySelectorAll(".hero-slide");
-  const heroPrev = document.getElementById("heroPrev");
-  const heroNext = document.getElementById("heroNext");
-  if (heroSlides.length > 0 && heroPrev && heroNext) {
-    let currentHero = 0;
-    
-    const showHeroSlide = (index) => {
-      heroSlides.forEach((slide, i) => {
-        slide.style.display = i === index ? "block" : "none";
-        if(i === index) {
-            slide.classList.add("active");
-        } else {
-            slide.classList.remove("active");
-        }
-      });
-      
-      // Disable or enable previous button
-      if (index === 0) {
-        heroPrev.disabled = true;
-        heroPrev.style.opacity = "0.4";
-        heroPrev.style.cursor = "default";
-      } else {
-        heroPrev.disabled = false;
-        heroPrev.style.opacity = "1";
-        heroPrev.style.cursor = "pointer";
-      }
-      
-      // Disable or enable next button
-      if (index === heroSlides.length - 1) {
-        heroNext.disabled = true;
-        heroNext.style.opacity = "0.4";
-        heroNext.style.cursor = "default";
-      } else {
-        heroNext.disabled = false;
-        heroNext.style.opacity = "1";
-        heroNext.style.cursor = "pointer";
-      }
-    };
-
-    // Initialize button states on load
-    showHeroSlide(currentHero);
-
-    heroPrev.addEventListener("click", () => {
-      if (currentHero > 0) {
-        currentHero--;
-        showHeroSlide(currentHero);
-      }
-    });
-
-    heroNext.addEventListener("click", () => {
-      if (currentHero < heroSlides.length - 1) {
-        currentHero++;
-        showHeroSlide(currentHero);
-      }
-    });
-  }
-
-  // ==========================================
-  // 3. Sidebar Toggle
+  // 2. Sidebar Toggle
   // ==========================================
   const hamburger = document.querySelector(".header-hamburger");
   const sidebar = document.getElementById("sidebarMenu");
@@ -149,6 +89,66 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // ==========================================
+  // 3. Hero Carousel Logic
+  // ==========================================
+  const heroSlides = document.querySelectorAll(".hero-slide");
+  const heroPrev = document.getElementById("heroPrev");
+  const heroNext = document.getElementById("heroNext");
+  if (heroSlides.length > 0 && heroPrev && heroNext) {
+    let currentHero = 0;
+    
+    const showHeroSlide = (index) => {
+      heroSlides.forEach((slide, i) => {
+        slide.style.display = i === index ? "block" : "none";
+        if(i === index) {
+            slide.classList.add("active");
+        } else {
+            slide.classList.remove("active");
+        }
+      });
+      
+      // Disable or enable previous button
+      if (index === 0) {
+        heroPrev.disabled = true;
+        heroPrev.style.opacity = "0.4";
+        heroPrev.style.cursor = "default";
+      } else {
+        heroPrev.disabled = false;
+        heroPrev.style.opacity = "1";
+        heroPrev.style.cursor = "pointer";
+      }
+      
+      // Disable or enable next button
+      if (index === heroSlides.length - 1) {
+        heroNext.disabled = true;
+        heroNext.style.opacity = "0.4";
+        heroNext.style.cursor = "default";
+      } else {
+        heroNext.disabled = false;
+        heroNext.style.opacity = "1";
+        heroNext.style.cursor = "pointer";
+      }
+    };
+
+    // Initialize button states on load
+    showHeroSlide(currentHero);
+
+    heroPrev.addEventListener("click", () => {
+      if (currentHero > 0) {
+        currentHero--;
+        showHeroSlide(currentHero);
+      }
+    });
+
+    heroNext.addEventListener("click", () => {
+      if (currentHero < heroSlides.length - 1) {
+        currentHero++;
+        showHeroSlide(currentHero);
+      }
+    });
+  }
 
   // ==========================================
   // 4. International Patients Tab Switching
