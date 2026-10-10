@@ -333,12 +333,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const psCaptionElement = document.querySelector(".ps-caption");
 
   const patientStories = [
-    { text: "70 year old Muthukumar, a resident of Bangalore, a heart patient, noticed sudden weakness on the right side of his body. He guessed it to be a symptom of a stroke...", caption: "Stroke is reversible. Time is key." },
-    { text: "Another inspiring story of a patient recovering from a complex spine surgery. With proper care and timely intervention, mobility was restored in record time.", caption: "Spine Care Excellence." },
-    { text: "A successful neurosurgery transformed the life of a young athlete, bringing them back to the field stronger than ever.", caption: "Neurosurgery Success." },
-    { text: "Advanced rehabilitation and dedicated neuro care helped our patient regain speech and cognitive abilities after a severe trauma.", caption: "Rehabilitation and Care." },
-    { text: "Pioneering brain tumor treatment provided new hope and a second chance at life for a mother of two.", caption: "Fighting Brain Tumors." },
-    { text: "State-of-the-art diagnostics and prompt treatment averted a life-threatening aneurysm rupture.", caption: "Advanced Diagnostics." }
+    { text: "70 year old Muthukumar, a resident of Bangalore, a heart patient, noticed sudden weakness on the right side of his body. He guessed it to be a symptom of a stroke and rushed to the hospital as quickly as possible, within one hour he was at Brains Hospital. He underwent a CT Scan and was diagnosed with a stroke. He was put on clot dissolving medicine and fortunately his stroke got reversed. Muthukumar said: \"I had lost hope, my right side was totally paralyzed. Since I reached the hospital on time, the doctors were able to take immediate action. The doctors consoled me and told me not to worry. The procedure took around 40 minutes, then I got some hope. I was able to walk the next day and carry on my daily routine activities. I am very thankful to the doctors, especially Dr. Venkataramana and all the staff who took care of me very well.\"", caption: "Stroke is reversible. Time is key." },
+    { text: "This is the story of a 40-year-old patient of a serious brain disorder called right mesial temporal (RMT) sclerosis. In his own words the patient, Saneerappa A B, who lives on the outskirts of Bangalore, describes how his difficult battle with this serious condition took a dramatic turn for the better after he met Dr N K Venkataramana, the Founder and Chief Neurosurgeon of Brains in December 2016. RMT Sclerosis, also known as Hippocampal sclerosis (HS), leads to serious loss of neuronal cells and causes seizures. Greetings from me and my family to Dr. Venkataramana. I am a resident of Dasarahalli on Tumkur Road, Bangalore City. For eight long and traumatic years I suffered from a serious neurological condition that caused seizures. In this period I consulted several neurologists in and around Bangalore but to no avail. It seemed I had reached a dead‑end with little hope of recovery. In December 2016 the President of the Karnataka Rakshana Veedike, T A Naryan Gowda advised me to consult Dr Venkataramana. On my first visit the doctor examined me clinically and evaluated all my reports, following which he patiently explained the problem. \"You have a problem on the right side of your brain,\" he said. \"But don’t worry, this can be treated with a surgery.\" Initially, the thought of a brain surgery was unnerving, but the doctor gave me the confidence to go through it. I was admitted to the Brains Hospital on January 25, 2017 and operated upon on January 27. During my stay at the hospital I was asked to follow certain instructions which I did religiously. I am now seizure‑free and feeling much better. I am very grateful to Dr. Venkataramana, he is equivalent to god for me.", caption: "Brains has changed my life" },
+    { text: "For many months my mother felt constantly tired and had difficulty in even walking, says the daughter of 70‑year‑old Gowramma. An MRI revealed a tumour (tentorial meningioma). She was referred to the world‑renowned neurosurgeon at the Brains Hospital. She was operated upon soon after and recovered completely. Our special thanks to Brains Hospital and its expert teams of neurosurgeons and neurologists led by Dr. Venkataramana for taking care of her so well.", caption: "We are happy because the doctor saved my mother" },
+    { text: "\"It has been three months since I was first hit by a terrible head that required surgery. Thanks to Brains and their expert doctors, I am now doing fine.\" 55 year old Syed Ziaulla's son said, \"When we brought him to Brains we had no idea what had led to his terrible condition but thanks to the care at the hospital, my father is now leading a normal life. Indeed, a series of tests revealed a large high‑flow arteriovenous malformation in the left frontal region. He went through surgery and is now fine.\"", caption: "Thanks to Brains and their expert doctors, I am now doing fine." },
+    { text: "Being diagnosed with serious brain disease can be nerve‑shattering. Sonia Singh, a mother of a three‑month infant, took the news in stride and remained strong. Dr. N K Venkataramana operated on her at Brains Hospital and she recovered well.", caption: "Thanks to Dr Venkataramana and his team, I am back to normal" },
+    { text: "Early cerebral degenerative disease was diagnosed in 46‑year‑old Vishala. After treatment at Brains Hospitals her aggressive behavior reduced, walking improved and she is now able to hold things and walk. She and her husband thank the entire team of doctors.", caption: "We are extremely thankful to the entire team of doctor" }
   ];
 
   if (psTrack && psPrev && psNext) {
@@ -353,7 +353,10 @@ document.addEventListener("DOMContentLoaded", () => {
         psTextElement.style.opacity = "0";
         psCaptionElement.style.opacity = "0";
         setTimeout(() => {
-          psTextElement.textContent = patientStories[currentSlide].text;
+          const fullText = patientStories[currentSlide].text;
+          const maxLen = 200;
+          const displayText = fullText.length > maxLen ? fullText.slice(0, maxLen) + "…" : fullText;
+          psTextElement.textContent = displayText;
           psCaptionElement.textContent = patientStories[currentSlide].caption;
           psTextElement.style.opacity = "1";
           psCaptionElement.style.opacity = "1";
@@ -411,6 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const psCircleBox = document.querySelector(".ps-circle-box");
     const psCircleText = document.querySelector(".ps-circle-text");
     const psParagraph = document.querySelector(".ps-circle-text p");
+    const psCircleImg = document.querySelector(".ps-circle-img");
 
     if (psHeading && psInnerContent && psCircleBox && psCircleText) {
       const handlePsHeading = () => {
@@ -421,12 +425,20 @@ document.addEventListener("DOMContentLoaded", () => {
             psHeading.style.marginBottom = "0px";
             psHeading.style.width = "100%";
           }
+          // swap to alternate image for small screens
+          if (psCircleImg) {
+            psCircleImg.src = "images/patients-speak-text-1.webp";
+          }
         } else {
           if (psHeading.parentNode !== psCircleText) {
             psCircleText.insertBefore(psHeading, psParagraph);
             psHeading.style.color = "white";
             psHeading.style.marginBottom = "25px";
             psHeading.style.width = "auto";
+          }
+          // ensure default image for larger screens
+          if (psCircleImg) {
+            psCircleImg.src = "images/patients-speak-text.webp";
           }
         }
       };
